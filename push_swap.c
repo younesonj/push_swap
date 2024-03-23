@@ -29,7 +29,7 @@ int main (int ac, char **av)
     //t_list *b;
 
     if (ac < 2)
-        ft_exit_msg("Number of arguments !");
+        ft_exit_msg("Number of arguments!");
     char **strs = read_numbers(av, ac);
 
     ft_check_nbrs(strs);
@@ -45,7 +45,7 @@ int main (int ac, char **av)
 
 
     print_ls(&stack_a);
-
+    free(tab);
     free_strs(strs);
     free_list(&stack_a);
     

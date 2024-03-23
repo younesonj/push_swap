@@ -36,3 +36,14 @@ void    int_check_doubles(int *tab, int size)
         i++;
     }
 }
+
+// void    free_arr(int *tab,int size)
+// {
+//     int i = 0;
+//     while (i < size)
+//     {
+//         free(tab[i]);
+//         i++;
+//     }
+//     free(tab);
+// }

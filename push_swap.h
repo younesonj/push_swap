@@ -31,6 +31,7 @@ int     ft_strcmp(char *s1, char *s2);
 int     len_strs(char **strs);
 int     *convert_strs_tab(char **strs);
 void    int_check_doubles(int *tab, int size);
+//void    free_arr(int *tab, int size);
 
 
 
