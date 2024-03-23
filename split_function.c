@@ -6,11 +6,11 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 17:50:09 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/02 18:26:22 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:34:18 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "push_swap.h"
 
 static int	check_equal(char const s, char c)
 {

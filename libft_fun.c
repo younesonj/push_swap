@@ -6,11 +6,11 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 16:26:32 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/02 17:51:52 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/23 14:32:11 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "push_swap.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -69,4 +69,36 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	str[i] = '\0';
 	return (str);
+}
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	neg;
+	int	res;
+
+	res = 0;
+	neg = 1;
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			neg = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - 48);
+		i++;
+	}
+	return (res * neg);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }
