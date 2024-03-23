@@ -36,17 +36,17 @@ int main (int ac, char **av)
     
     int len = len_strs(strs);
     int *tab = convert_strs_tab(strs);
+    free_strs(strs);
 
     int_check_doubles(tab, len);
 
     int i = 0;
-    while (strs[i])
+    while (i < len)
         insert_ls_end(&stack_a, tab[i++]);
 
 
     print_ls(&stack_a);
     free(tab);
-    free_strs(strs);
     free_list(&stack_a);
     
 

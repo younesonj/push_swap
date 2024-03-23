@@ -22,15 +22,24 @@ void    ft_check_nbrs(char **strs)
             }
         }
         if (sign > 1)
-            ft_exit_msg("More than one sign in a number.");
+        {
+            free_strs(strs);
+            ft_exit_msg("More than one sign in a number!");
+        }
         while (strs[i][j])
         {
-            if (!(strs[i][j] >= '0' && strs[i][j] <= '9')) 
-                ft_exit_msg("Enter digits !");
+            if (!(strs[i][j] >= '0' && strs[i][j] <= '9'))
+            {
+                free_strs(strs);
+                ft_exit_msg("Enter digits!");
+            }
             j++;
         }
         if (sign == j)
-            ft_exit_msg("Enter number !");
+        {
+            free_strs(strs);
+            ft_exit_msg("Enter number!");
+        }
         i++;
     }
 }

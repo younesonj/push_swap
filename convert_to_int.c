@@ -30,7 +30,10 @@ void    int_check_doubles(int *tab, int size)
         while (j < size)
         {
             if (tab[i] == tab[j])
+            {
+                free(tab);
                 ft_exit_msg("Double number!");
+            }
             j++;
         }
         i++;
