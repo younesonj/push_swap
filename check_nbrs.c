@@ -82,8 +82,11 @@ void    check_overflow(char **strs)
     int i = 0;
     while (strs[i])
     {
-        if (ft_atoi_pro_max(strs[i]) == 1 && ft_strlen(strs[i]) >= 10) 
+        if (ft_atoi_pro_max(strs[i]) == 1 && ft_strlen(strs[i]) >= 10)
+        {
+            free_strs(strs);
             ft_exit_msg("Overflow Detected!");
+        }
         i++;
     }
 }
