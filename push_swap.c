@@ -37,7 +37,7 @@ int main (int ac, char **av)
     // int j = 0;
     // while (strs[j])
     //     ft_printf("\"%s\"\n", strs[j++]);
-    
+
     int len = len_strs(strs);
     int *tab = convert_strs_tab(strs);
     free_strs(strs);

@@ -1,92 +1,77 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_nbrs.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/24 15:45:45 by younajja          #+#    #+#             */
+/*   Updated: 2024/03/24 17:23:53 by younajja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void    ft_exit_msg(char *str)
+void	ft_exit_msg(char *str)
 {
-    ft_printf("Error! %s", str);
-    exit(1);
+	ft_printf("Error! %s", str);
+	exit(1);
 }
 
-void    ft_check_nbrs(char **strs)
+int	ft_check_is_digit(char **strs, int i, int j)
 {
-    int i = 0;
-    while (strs[i])
-    {
-        int j = 0;
-        int sign = 0;
-        if (strs[i][j] == '-' || strs[i][j] == '+')
-        {
-            while ((strs[i][j] == '-' || strs[i][j] == '+') && strs[i][j])
-            {
-                j++;
-                sign++;
-            }
-        }
-        if (sign > 1)
-        {
-            free_strs(strs);
-            ft_exit_msg("More than one sign in a number!");
-        }
-        while (strs[i][j])
-        {
-            if (!(strs[i][j] >= '0' && strs[i][j] <= '9'))
-            {
-                free_strs(strs);
-                ft_exit_msg("Enter digits!");
-            }
-            j++;
-        }
-        if (sign == j)
-        {
-            free_strs(strs);
-            ft_exit_msg("Enter number!");
-        }
-        i++;
-    }
+	while (strs[i][j])
+	{
+		if (!(strs[i][j] >= '0' && strs[i][j] <= '9'))
+		{
+			free_strs(strs);
+			ft_exit_msg("Enter digits!");
+		}
+		j++;
+	}
+	return (j);
 }
 
-int ft_atoi_pro_max(char *str)
+void	ft_check_number_existant(char **strs, int sign, int j)
+{
+	if (sign == j)
+	{
+		free_strs(strs);
+		ft_exit_msg("");
+	}
+}
+
+void	ft_check_nb_sign(char **strs, int sign)
+{
+	if (sign > 1)
+	{
+		free_strs(strs);
+		ft_exit_msg("More than sign before a number!");
+	}
+}
+
+void	ft_check_nbrs(char **strs)
 {
 	int	i;
-	int	neg;
-	int	res;
-    int prev_res;
+	int	j;
+	int	sign;
 
-    prev_res = 0;
-	res = 0;
-	neg = 1;
 	i = 0;
-	if (str[i] == '-' || str[i] == '+')
+	while (strs[i])
 	{
-		if (str[i] == '-')
-			neg = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-        prev_res = res;
-		res = res * 10 + (str[i] - 48);
-        if ((res / 10) != prev_res)
-        {
-		    if (str[i] == '8' && neg == -1 && str[i + 1] == 0)
-		        return 0;
-            else
-                return (1);
+		j = 0;
+		sign = 0;
+		if (strs[i][j] == '-' || strs[i][j] == '+')
+		{
+			while ((strs[i][j] == '-' || strs[i][j] == '+') && strs[i][j])
+			{
+				j++;
+				sign++;
+			}
 		}
+		ft_check_nb_sign(strs, sign);
+		j = ft_check_is_digit(strs, i, j);
+		ft_check_number_existant(strs, sign, j);
 		i++;
 	}
-	return (0);
-}
-
-void    check_overflow(char **strs)
-{
-    int i = 0;
-    while (strs[i])
-    {
-        if (ft_atoi_pro_max(strs[i]) == 1 && ft_strlen(strs[i]) >= 10)
-        {
-            free_strs(strs);
-            ft_exit_msg("Overflow Detected!");
-        }
-        i++;
-    }
 }
