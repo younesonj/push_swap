@@ -33,6 +33,10 @@ int main (int ac, char **av)
     char **strs = read_numbers(av, ac);
 
     ft_check_nbrs(strs);
+    check_overflow(strs);
+    // int j = 0;
+    // while (strs[j])
+    //     ft_printf("\"%s\"\n", strs[j++]);
     
     int len = len_strs(strs);
     int *tab = convert_strs_tab(strs);
@@ -48,6 +52,6 @@ int main (int ac, char **av)
     print_ls(&stack_a);
     free(tab);
     free_list(&stack_a);
-    
+
 
 }

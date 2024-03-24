@@ -23,7 +23,7 @@ void    print_ls(t_list **list)
     t_list *curr = *list;
     while (curr != NULL)
     {
-        printf("%d\n", curr->value);
+        ft_printf("%d\n", curr->value);
         curr = curr->next;
     }
 }

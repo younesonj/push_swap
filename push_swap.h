@@ -2,9 +2,11 @@
 #define PUSH_SWAP_H
 
 
-#include <stdio.h>
+//#include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include "gnl/get_next_line.h"
+#include "printf/ft_printf.h"
 
 typedef struct t_list{
     int value;
@@ -32,6 +34,7 @@ int     len_strs(char **strs);
 int     *convert_strs_tab(char **strs);
 void    int_check_doubles(int *tab, int size);
 void    free_strs(char **strs);
+void    check_overflow(char **strs);
 //void    free_arr(int *tab, int size);
 
 
