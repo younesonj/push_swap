@@ -6,11 +6,11 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 17:50:09 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/22 17:34:18 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/25 12:38:36 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 static int	check_equal(char const s, char c)
 {

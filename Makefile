@@ -1,11 +1,11 @@
 NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = push_swap.c  ls_functions.c split_function.c libft_fun.c check_nbrs.c\
-		gnl/get_next_line.c gnl/get_next_line_utils.c convert_to_int.c \
+SRCS = push_swap.c  ls_functions.c libft/split_function.c libft/libft_fun.c check_nbrs.c\
+		gnl/get_next_line.c gnl/get_next_line_utils.c check_doubles.c \
 		printf/ft_hex.c printf/ft_printf.c printf/ft_putadress.c printf/ft_Upphex.c\
 		printf/ft_putchar.c printf/ft_putnbr.c printf/ft_putstr.c printf/ft_putunsigned.c\
-		check_overflow.c libft2.c\
+		check_overflow.c libft/libft2.c actions/sa_sb_ss.c\
 
 		
 		

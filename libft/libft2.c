@@ -6,11 +6,11 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:33:50 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/24 17:34:53 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/25 12:38:30 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

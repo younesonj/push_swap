@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:36:41 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/24 17:38:53 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:30:14 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,28 @@ void	free_list(t_list **list)
 		curr = aux;
 	}
 	*list = NULL;
+}
+
+int check_is_sorted(t_list **list)
+{
+    t_list *curr = *list;
+    while (curr->next != NULL)
+    {
+        if (curr->value > curr->next->value)
+            return (0);
+        curr = curr->next;
+    }
+    return (1);
+}
+
+int len_list(t_list **list)
+{
+    int len = 0;
+    t_list *curr = *list;
+    while (curr)
+    {
+        curr = curr->next;
+        len++;
+    }
+    return (len);
 }

@@ -23,6 +23,7 @@ void    free_strs(char **strs)
     free(strs);
 }
 
+
 int main (int ac, char **av)
 {
     t_list *stack_a = NULL;
@@ -47,11 +48,28 @@ int main (int ac, char **av)
     int i = 0;
     while (i < len)
         insert_ls_end(&stack_a, tab[i++]);
-
-
-    print_ls(&stack_a);
     free(tab);
+
+    if (check_is_sorted(&stack_a) == 1)
+    {
+        ft_printf("already sorted!");
+        free_list(&stack_a);
+        exit(1);
+    }
+    if (len_list(&stack_a) == 2)
+    {
+        //ft_printf("wa fih gha joj santim hh\n");
+        sa_and_sb(&stack_a, 'a');
+        //exit(1);
+    }
+
+
+
+
+    //print_ls(&stack_a);
     free_list(&stack_a);
 
 
 }
+
+
