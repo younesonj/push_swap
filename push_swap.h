@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:39:51 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/27 03:33:06 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:06:12 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,18 @@ int					check_is_sorted(t_list **list);
 int					len_list(t_list **list);
 
 //*******************actions*****************************//
-void    	swap_first_two(t_list **list);
-void    	sa_and_sb(t_list **list, char c);
-int 		len_list(t_list **list)
+
+void    	sa_or_sb(t_list **list, char c);
+void    	ss(t_list **stack_a, t_list **stack_b);
+int 		len_list(t_list **list);
+void    	rra_or_rrb(t_list **list, char c);
+void    	rrr(t_list **a, t_list **b);
+void    	ra_or_rb(t_list **list, char c);
+void    	rr(t_list **list_a, t_list **list_b);
+void    	pa(t_list **a, t_list **b);
+void    	pb(t_list **b, t_list **a);
+
+
 
 
 

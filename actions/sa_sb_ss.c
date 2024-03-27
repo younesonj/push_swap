@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-void    swap_first_two(t_list **list)
+void    swap_list(t_list **list)
 {
     t_list  *first = *list;
     t_list  *second = (*list)->next;

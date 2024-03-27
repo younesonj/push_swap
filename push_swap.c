@@ -56,7 +56,7 @@ int main (int ac, char **av)
         exit(0);
     }
     if (len_list(&stack_a) == 2)
-        sa_and_sb(&stack_a, 'a');
+        sa_or_sb(&stack_a, 'a');
 
 
 
