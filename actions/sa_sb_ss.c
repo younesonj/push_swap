@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-void    swap_list(t_list **list)
+void    swap_first_two(t_list **list)
 {
     t_list  *first = *list;
     t_list  *second = (*list)->next;
@@ -11,11 +11,16 @@ void    swap_list(t_list **list)
     *list = second;
 }
 
-void    sa_and_sb(t_list **list, char c)
+void    sa_or_sb(t_list **list, char c)
 {
     swap_list (list);
-    if (c == 'a')
-        ft_printf("sa\n");
-    else
-        ft_printf("sb\n");
+    ft_printf("s%c\n", c);
+
+}
+
+void    ss(t_list **stack_a, t_list **stack_b)
+{
+    swap_list (stack_a);
+    swap_list (stack_b);
+    ft_printf("ss\n");
 }
