@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:39:51 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/27 22:06:12 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/28 00:13:24 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ void    	ra_or_rb(t_list **list, char c);
 void    	rr(t_list **list_a, t_list **list_b);
 void    	pa(t_list **a, t_list **b);
 void    	pb(t_list **b, t_list **a);
+
+//***************sort*********************
+void    	sort_three(t_list **list);
 
 
 

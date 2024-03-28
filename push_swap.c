@@ -47,16 +47,23 @@ int main (int ac, char **av)
 
     int i = 0;
     while (i < len)
-        insert_ls_end(&stack_a, tab[i++]);
+    {
+        insert_ls_end(&stack_a, tab[i]);
+        i++;
+    }
     free(tab);
 
     if (check_is_sorted(&stack_a) == 1)
     {
+        ft_printf("already sorted!");
         free_list(&stack_a);
         exit(0);
     }
     if (len_list(&stack_a) == 2)
         sa_or_sb(&stack_a, 'a');
+    else if (len_list(&stack_a) == 3)
+        sort_three(&stack_a);
+
 
 
 

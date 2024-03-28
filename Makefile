@@ -6,7 +6,7 @@ SRCS = push_swap.c  ls_functions.c libft/split_function.c libft/libft_fun.c chec
 		printf/ft_hex.c printf/ft_printf.c printf/ft_putadress.c printf/ft_Upphex.c\
 		printf/ft_putchar.c printf/ft_putnbr.c printf/ft_putstr.c printf/ft_putunsigned.c\
 		check_overflow.c libft/libft2.c actions/sa_sb_ss.c actions/pa_pb.c\
-		actions/ra_sb_rr.c  actions/rra_rrb_rrr.c \
+		actions/ra_sb_rr.c  actions/rra_rrb_rrr.c sort_three.c\
 		
 OBJS = $(SRCS:.c=.o)
 
