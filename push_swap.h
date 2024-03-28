@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:39:51 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/28 00:13:24 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/28 05:09:20 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ typedef struct t_list
 {
 	int				value;
 	int				index;
-	int				cost;
 	int				is_in_top;
-	struct t_list	*target;
+	//int				cost;
+	//struct t_list	*target;
 	struct t_list	*next;
 }					t_list;
 
@@ -64,6 +64,10 @@ void    	pb(t_list **b, t_list **a);
 
 //***************sort*********************
 void    	sort_three(t_list **list);
+t_list		*search_biggest(t_list **list);
+t_list 		*search_smallest(t_list **list);
+void    	set_positions(t_list **list);
+void    sort_five(t_list **stack_a, t_list **stack_b);
 
 
 

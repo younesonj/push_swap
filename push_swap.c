@@ -27,7 +27,7 @@ void    free_strs(char **strs)
 int main (int ac, char **av)
 {
     t_list *stack_a = NULL;
-    //t_list *b;
+    t_list *stack_b = NULL;
 
     if (ac < 2)
         ft_exit_msg("Number of arguments!");
@@ -63,6 +63,8 @@ int main (int ac, char **av)
         sa_or_sb(&stack_a, 'a');
     else if (len_list(&stack_a) == 3)
         sort_three(&stack_a);
+    else if (len_list(&stack_a) == 5)
+        sort_five(&stack_a, &stack_b);
 
 
 
