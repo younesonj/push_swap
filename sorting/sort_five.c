@@ -20,3 +20,4 @@ void    sort_five(t_list **stack_a, t_list **stack_b)
     while ((*stack_b) != NULL)
         pa(stack_a, stack_b);
 }
+

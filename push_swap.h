@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:39:51 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/28 05:09:20 by younajja         ###   ########.fr       */
+/*   Updated: 2024/03/31 09:14:41 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct t_list
 	int				index;
 	int				is_in_top;
 	//int				cost;
-	//struct t_list	*target;
+	struct t_list	*target;
 	struct t_list	*next;
 }					t_list;
 

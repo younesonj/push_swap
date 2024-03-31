@@ -15,14 +15,14 @@ t_list  *search_biggest(t_list **list)
 t_list  *search_smallest(t_list **list)
 {
     t_list *curr = *list;
-    t_list *high = *list;
+    t_list *less = *list;
     while (curr != NULL)
     {
-        if (high->value > curr->value)
-            high = curr;
+        if (less->value > curr->value)
+            less = curr;
         curr = curr->next;
     }
-    return (high);
+    return (less);
 } 
 
 
@@ -42,3 +42,6 @@ void    set_positions(t_list **list)
         curr = curr->next;
     }
 }
+
+
+
