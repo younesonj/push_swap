@@ -1,4 +1,38 @@
 #include "push_swap.h"
+#include <stdio.h>
+
+int check_args(char **strs)
+{
+    int i = 0;
+
+    while (strs[i])
+    {
+        int count = 0;
+        int j = 0;
+        if (ft_strlen(strs[i]) == 0)
+            return (1);
+        while (strs[i][j])
+        {
+            if (strs[i][j] != 32)
+                count++;
+            j++;
+        }
+        if (count == 0)
+            return (1);
+        i++;
+    }
+    return (0);
+}
+
+void    print_for_debug(char **strs)
+{
+    int i =0;
+    while (strs[i])
+    {
+        printf("begining\"%s\"end\n",strs[i]);
+        i++;
+    }
+}
 
 char    **read_numbers(char **arr_nb, int size)
 {
@@ -31,6 +65,11 @@ int main (int ac, char **av)
 
     if (ac < 2)
         ft_exit_msg("Number of arguments!");
+    
+    if (check_args(av))
+        ft_exit_msg("wa tgaaa3d");
+    //print_for_debug(av);
+
     char **strs = read_numbers(av, ac);
 
     ft_check_nbrs(strs);
@@ -70,7 +109,7 @@ int main (int ac, char **av)
 
 
 
-    print_ls(&stack_a);
+    //print_ls(&stack_a);
     free_list(&stack_a);
 
     return (0);
