@@ -26,6 +26,7 @@ typedef struct t_list
 	int				index;
 	int				is_in_top;
 	//int				cost;
+	int				cost_to_push;
 	struct t_list	*target;
 	struct t_list	*next;
 }					t_list;
@@ -67,8 +68,10 @@ void    	sort_three(t_list **list);
 t_list		*search_biggest(t_list **list);
 t_list 		*search_smallest(t_list **list);
 void    	set_positions(t_list **list);
-void    sort_five(t_list **stack_a, t_list **stack_b);
-
+void    	sort_five(t_list **stack_a, t_list **stack_b);
+void    	set_target(t_list **stack_a, t_list **stack_b);
+void    	set_cost_to_push(t_list   *a, int len_a, int len_b);
+void    	stack_sort(t_list **stack_a, t_list **stack_b);
 
 
 

@@ -104,7 +104,8 @@ int main (int ac, char **av)
         sort_three(&stack_a);
     else if (len_list(&stack_a) == 5)
         sort_five(&stack_a, &stack_b);
-
+    else
+        stack_sort(&stack_a, &stack_b);
 
 
 
