@@ -110,7 +110,7 @@ int main (int ac, char **av)
 
 
 
-    print_ls(&stack_b);
+    //print_ls(&stack_a);
     free_list(&stack_a);
 
     return (0);
