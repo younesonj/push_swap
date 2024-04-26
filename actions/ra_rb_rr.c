@@ -36,7 +36,8 @@ void	rotate_list(t_list **list)
 
 void	ra_or_rb(t_list **list, char c, int sign)
 {
-	rotate_list(list);
+	if ((*list) && (*list)->next)
+		rotate_list(list);
 	if (sign == 1)
 		ft_printf("r%c\n", c);
 }

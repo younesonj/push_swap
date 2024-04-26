@@ -26,6 +26,8 @@ void	swap_list(t_list **list)
 
 void	sa_or_sb(t_list **list, char c, int sign)
 {
+	if (len_list(list) < 2)
+		return ;
 	swap_list(list);
 	if (sign == 1)
 		ft_printf("s%c\n", c);
@@ -33,8 +35,10 @@ void	sa_or_sb(t_list **list, char c, int sign)
 
 void	ss(t_list **stack_a, t_list **stack_b, int sign)
 {
-	swap_list(stack_a);
-	swap_list(stack_b);
+	if (len_list(stack_a) > 2)
+		swap_list(stack_a);
+	if (len_list(stack_b) > 2)
+		swap_list(stack_b);
 	if (sign == 1)
 		ft_printf("ss\n");
 }
