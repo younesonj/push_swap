@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:36:41 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/25 14:30:14 by younajja         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:23:27 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,6 @@ void	insert_ls_end(t_list **list, int value)
 	curr->next = new_node;
 }
 
-void	print_ls(t_list **list)
-{
-	t_list	*curr;
-
-	curr = *list;
-	while (curr != NULL)
-	{
-		ft_printf("%d\n", curr->value);
-		curr = curr->next;
-	}
-}
-
 void	free_list(t_list **list)
 {
 	t_list	*curr;
@@ -60,26 +48,31 @@ void	free_list(t_list **list)
 	*list = NULL;
 }
 
-int check_is_sorted(t_list **list)
+int	check_is_sorted(t_list **list)
 {
-    t_list *curr = *list;
-    while (curr->next != NULL)
-    {
-        if (curr->value > curr->next->value)
-            return (0);
-        curr = curr->next;
-    }
-    return (1);
+	t_list	*curr;
+
+	curr = *list;
+	while (curr->next != NULL)
+	{
+		if (curr->value > curr->next->value)
+			return (0);
+		curr = curr->next;
+	}
+	return (1);
 }
 
-int len_list(t_list **list)
+int	len_list(t_list **list)
 {
-    int len = 0;
-    t_list *curr = *list;
-    while (curr)
-    {
-        curr = curr->next;
-        len++;
-    }
-    return (len);
+	int		len;
+	t_list	*curr;
+
+	len = 0;
+	curr = *list;
+	while (curr)
+	{
+		curr = curr->next;
+		len++;
+	}
+	return (len);
 }

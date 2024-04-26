@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:30:20 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/25 19:26:31 by younajja         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:38:29 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	int_check_doubles(int *tab, int size)
 			if (tab[i] == tab[j])
 			{
 				free(tab);
-				ft_exit_msg("Double number!");
+				ft_exit_msg();
 			}
 			j++;
 		}

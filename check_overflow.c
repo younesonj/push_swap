@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:21:42 by younajja          #+#    #+#             */
-/*   Updated: 2024/03/24 17:26:35 by younajja         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:38:45 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	check_overflow(char **strs)
 		if (ft_atoi_pro_max(strs[i]) == 1 && ft_strlen(strs[i]) >= 10)
 		{
 			free_strs(strs);
-			ft_exit_msg("Overflow Detected!");
+			ft_exit_msg();
 		}
 		i++;
 	}
