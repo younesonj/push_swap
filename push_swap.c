@@ -19,11 +19,13 @@ int	check_args(int ac, char **strs)
 	int	j;
 
 	i = 0;
+	if (ac < 2)
+		exit (1);
 	while (strs[i])
 	{
 		count = 0;
 		j = 0;
-		if (ft_strlen(strs[i]) == 0 || ac < 2)
+		if (ft_strlen(strs[i]) == 0)
 			ft_exit_msg();
 		while (strs[i][j])
 		{
