@@ -36,7 +36,7 @@ void	push(t_list **stack_a, t_list **stack_b)
 	if (node_to_push->is_in_top == 1 && node_to_push->target->is_in_top == 1)
 	{
 		while (*stack_a != node_to_push && *stack_b != node_to_push->target)
-			rr(stack_a, stack_b);
+			rr(stack_a, stack_b, 1);
 		set_positions(stack_a);
 		set_positions(stack_b);
 	}
@@ -44,13 +44,13 @@ void	push(t_list **stack_a, t_list **stack_b)
 		&& node_to_push->target->is_in_top == 0)
 	{
 		while (*stack_a != node_to_push && *stack_b != node_to_push->target)
-			rrr(stack_a, stack_b);
+			rrr(stack_a, stack_b, 1);
 		set_positions(stack_a);
 		set_positions(stack_b);
 	}
 	stack_sort_ra_up(stack_a, node_to_push);
 	stack_sort_rrb_down(stack_b, node_to_push);
-	pb(stack_b, stack_a);
+	pb(stack_b, stack_a, 1);
 }
 
 void	set_bigger_in_top(t_list **stack_b)
@@ -62,19 +62,19 @@ void	set_bigger_in_top(t_list **stack_b)
 	if (max->is_in_top == 1)
 	{
 		while (*stack_b != max)
-			ra_or_rb(stack_b, 'b');
+			ra_or_rb(stack_b, 'b', 1);
 	}
 	else if (max->is_in_top == 0)
 	{
 		while (*stack_b != max)
-			rra_or_rrb(stack_b, 'b');
+			rra_or_rrb(stack_b, 'b', 1);
 	}
 }
 
 void	stack_sort(t_list **stack_a, t_list **stack_b)
 {
-	pb(stack_b, stack_a);
-	pb(stack_b, stack_a);
+	pb(stack_b, stack_a, 1);
+	pb(stack_b, stack_a, 1);
 	while ((*stack_a) != NULL)
 	{
 		set_positions(stack_a);
@@ -85,5 +85,5 @@ void	stack_sort(t_list **stack_a, t_list **stack_b)
 	}
 	set_bigger_in_top(stack_b);
 	while (*stack_b)
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, 1);
 }

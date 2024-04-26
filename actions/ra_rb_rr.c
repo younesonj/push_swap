@@ -34,15 +34,17 @@ void	rotate_list(t_list **list)
 	*list = second;
 }
 
-void	ra_or_rb(t_list **list, char c)
+void	ra_or_rb(t_list **list, char c, int sign)
 {
 	rotate_list(list);
-	ft_printf("r%c\n", c);
+	if (sign == 1)
+		ft_printf("r%c\n", c);
 }
 
-void	rr(t_list **list_a, t_list **list_b)
+void	rr(t_list **list_a, t_list **list_b, int sign)
 {
 	rotate_list(list_a);
 	rotate_list(list_b);
-	ft_printf("rr\n");
+	if (sign == 1)
+		ft_printf("rr\n");
 }

@@ -26,14 +26,16 @@ void	push_list(t_list **src, t_list **dest)
 	*dest = head_a;
 }
 
-void	pa(t_list **a, t_list **b)
+void	pa(t_list **a, t_list **b, int sign)
 {
 	push_list(b, a);
-	ft_printf("pa\n");
+	if (sign == 1)
+		ft_printf("pa\n");
 }
 
-void	pb(t_list **b, t_list **a)
+void	pb(t_list **b, t_list **a, int sign)
 {
 	push_list(a, b);
-	ft_printf("pb\n");
+	if (sign == 1)
+		ft_printf("pb\n");
 }

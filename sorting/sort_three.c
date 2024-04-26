@@ -18,9 +18,9 @@ void	sort_three(t_list **list)
 
 	high = search_biggest(list);
 	if ((*list) == high)
-		ra_or_rb(list, 'a');
+		ra_or_rb(list, 'a', 1);
 	else if ((*list)->next == high)
-		rra_or_rrb(list, 'a');
+		rra_or_rrb(list, 'a', 1);
 	if ((*list)->value > (*list)->next->value)
-		sa_or_sb(list, 'a');
+		sa_or_sb(list, 'a', 1);
 }
