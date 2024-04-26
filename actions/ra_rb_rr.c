@@ -36,16 +36,19 @@ void	rotate_list(t_list **list)
 
 void	ra_or_rb(t_list **list, char c, int sign)
 {
-	if ((*list) && (*list)->next)
-		rotate_list(list);
+	if (len_list(list) < 2)
+		return ;	
+	rotate_list(list);
 	if (sign == 1)
 		ft_printf("r%c\n", c);
 }
 
 void	rr(t_list **list_a, t_list **list_b, int sign)
 {
-	rotate_list(list_a);
-	rotate_list(list_b);
+	if (len_list(list_a) > 1)
+		rotate_list(list_a);
+	if (len_list(list_b) > 1)
+		rotate_list(list_b);
 	if (sign == 1)
 		ft_printf("rr\n");
 }

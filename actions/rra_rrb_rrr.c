@@ -36,6 +36,8 @@ void	rrotate_list(t_list **list)
 
 void	rra_or_rrb(t_list **list, char c, int sign)
 {
+	if (len_list(list) < 2)
+		return;
 	rrotate_list(list);
 	if (sign == 1)
 		ft_printf("rr%c\n", c);
@@ -43,8 +45,10 @@ void	rra_or_rrb(t_list **list, char c, int sign)
 
 void	rrr(t_list **a, t_list **b, int sign)
 {
-	rrotate_list(a);
-	rrotate_list(b);
+	if (len_list(a) > 1)
+		rrotate_list(a);
+	if (len_list(b) > 1)
+		rrotate_list(b);
 	if (sign == 1)
 		ft_printf("rrr\n");
 }

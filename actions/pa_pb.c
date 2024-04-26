@@ -28,6 +28,8 @@ void	push_list(t_list **src, t_list **dest)
 
 void	pa(t_list **a, t_list **b, int sign)
 {
+	if (len_list(b) < 1)
+		return ;
 	push_list(b, a);
 	if (sign == 1)
 		ft_printf("pa\n");
@@ -35,6 +37,8 @@ void	pa(t_list **a, t_list **b, int sign)
 
 void	pb(t_list **b, t_list **a, int sign)
 {
+	if (len_list(a) < 1)
+		return ;
 	push_list(a, b);
 	if (sign == 1)
 		ft_printf("pb\n");

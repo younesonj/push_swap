@@ -38,6 +38,8 @@ void	free_list(t_list **list)
 	t_list	*curr;
 	t_list	*aux;
 
+	if (!(*list))
+		return ;
 	curr = *list;
 	while (curr != NULL)
 	{
@@ -53,6 +55,10 @@ int	check_is_sorted(t_list **list)
 	t_list	*curr;
 
 	curr = *list;
+	if (len_list(list) < 2)
+		return (1);
+	if (!(*list))
+		return (1);
 	while (curr->next != NULL)
 	{
 		if (curr->value > curr->next->value)
@@ -69,6 +75,8 @@ int	len_list(t_list **list)
 
 	len = 0;
 	curr = *list;
+	if (!(*list))
+		return (0);
 	while (curr)
 	{
 		curr = curr->next;

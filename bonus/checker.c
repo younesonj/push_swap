@@ -79,7 +79,7 @@ int	main(int ac, char **av)
 	}
 	
 	
-	if (check_is_sorted(&stack_a) == 1)
+	if (check_is_sorted(&stack_a) == 1 && !stack_b)
 	{
 		free_list(&stack_a);
 		ft_printf("OK");

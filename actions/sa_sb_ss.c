@@ -35,9 +35,9 @@ void	sa_or_sb(t_list **list, char c, int sign)
 
 void	ss(t_list **stack_a, t_list **stack_b, int sign)
 {
-	if (len_list(stack_a) > 2)
+	if (len_list(stack_a) > 1)
 		swap_list(stack_a);
-	if (len_list(stack_b) > 2)
+	if (len_list(stack_b) > 1)
 		swap_list(stack_b);
 	if (sign == 1)
 		ft_printf("ss\n");
