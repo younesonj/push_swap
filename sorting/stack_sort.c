@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 10:24:07 by younajja          #+#    #+#             */
-/*   Updated: 2024/04/26 11:25:37 by younajja         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:48:21 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,8 @@ void	push(t_list **stack_a, t_list **stack_b)
 		set_positions(stack_a);
 		set_positions(stack_b);
 	}
-	while ((*stack_a) != node_to_push)
-	{
-		if (node_to_push->is_in_top == 1)
-			ra_or_rb(stack_a, 'a');
-		else if (node_to_push->is_in_top == 0)
-			rra_or_rrb(stack_a, 'a');
-	}
-	while ((*stack_b) != node_to_push->target)
-	{
-		if (node_to_push->target->is_in_top == 1)
-			ra_or_rb(stack_b, 'b');
-		else if (node_to_push->target->is_in_top == 0)
-			rra_or_rrb(stack_b, 'b');
-	}
+	stack_sort_ra_up(stack_a, node_to_push);
+	stack_sort_rrb_down(stack_b, node_to_push);
 	pb(stack_b, stack_a);
 }
 

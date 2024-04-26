@@ -7,7 +7,8 @@ SRCS = push_swap.c  ls_functions.c libft/split_function.c libft/libft_fun.c chec
 		printf/ft_putchar.c printf/ft_putnbr.c printf/ft_putstr.c printf/ft_putunsigned.c\
 		check_overflow.c libft/libft2.c actions/sa_sb_ss.c actions/pa_pb.c\
 		actions/ra_rb_rr.c  actions/rra_rrb_rrr.c sorting/sort_three.c sorting/sort_five.c\
-		sorting/sort_utils.c sorting/stack_sort.c sorting/set_cost_to_push.c \
+		sorting/sort_utils.c sorting/stack_sort.c sorting/set_cost_to_push.c\
+		sorting/stack_sort_utils2.c
 		
 OBJS = $(SRCS:.c=.o)
 
