@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:39:51 by younajja          #+#    #+#             */
-/*   Updated: 2024/04/26 11:49:01 by younajja         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:21:43 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ void				set_cost_to_push(t_list *a, int len_a, int len_b);
 void				stack_sort(t_list **stack_a, t_list **stack_b);
 void				stack_sort_ra_up(t_list	**stack_a, t_list *node_to_push);
 void				stack_sort_rrb_down(t_list **stack_b, t_list *node_to_push);
-int					check_args(int ac, char **strs);
+int					check_args(char **strs);
 char				**read_numbers(char **arr_nb, int size);
 void				free_strs(char **strs);
+void				ft_norme(t_list **stack_a, int ac, char **av);
 
 #endif

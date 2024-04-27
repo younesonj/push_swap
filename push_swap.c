@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 10:23:20 by younajja          #+#    #+#             */
-/*   Updated: 2024/04/26 11:21:26 by younajja         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:18:21 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,13 @@ int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		len;
-	int		*tab;
-	int		i;
 
+	if (ac < 2)
+		exit(1);
+	check_args(av);
 	stack_a = NULL;
 	stack_b = NULL;
-	check_args(ac, av);
-	ft_check_nbrs(read_numbers(av, ac));
-	check_overflow(read_numbers(av, ac));
-	len = len_strs(read_numbers(av, ac));
-	tab = convert_strs_tab(read_numbers(av, ac));
-	free_strs(read_numbers(av, ac));
-	int_check_doubles(tab, len);
-	i = 0;
-	while (i < len)
-		insert_ls_end(&stack_a, tab[i++]);
-	free(tab);
+	ft_norme(&stack_a, ac, av);
 	sorting_all(&stack_a, &stack_b);
 	free_list(&stack_a);
 	return (0);
