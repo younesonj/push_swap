@@ -6,23 +6,11 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:38:25 by younajja          #+#    #+#             */
-/*   Updated: 2024/04/27 11:46:20 by younajja         ###   ########.fr       */
+/*   Updated: 2024/04/27 11:58:15 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	ft_print_lists(t_list **list)
-{
-	t_list	*curr;
-
-	curr = *list;
-	while (curr != NULL)
-	{
-		ft_printf("%d\n", curr->value);
-		curr = curr->next;
-	}
-}
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -76,12 +64,12 @@ void	ft_checker(t_list **stack_a, t_list **stack_b)
 	if (check_is_sorted(stack_a) == 1 && !(*stack_b))
 	{
 		free_list(stack_a);
-		ft_printf("OK");
+		ft_printf("OK\n");
 	}
 	else
 	{
 		free_list(stack_a);
-		ft_printf("KO");
+		ft_printf("KO\n");
 	}
 }
 
