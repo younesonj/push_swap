@@ -6,7 +6,7 @@
 /*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 10:23:34 by younajja          #+#    #+#             */
-/*   Updated: 2024/04/26 11:29:51 by younajja         ###   ########.fr       */
+/*   Updated: 2024/04/27 11:49:35 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	rrotate_list(t_list **list)
 void	rra_or_rrb(t_list **list, char c, int sign)
 {
 	if (len_list(list) < 2)
-		return;
+		return ;
 	rrotate_list(list);
 	if (sign == 1)
 		ft_printf("rr%c\n", c);

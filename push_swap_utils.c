@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/27 11:46:41 by younajja          #+#    #+#             */
+/*   Updated: 2024/04/27 11:48:49 by younajja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	check_args(int ac, char **strs)
@@ -8,7 +20,7 @@ int	check_args(int ac, char **strs)
 
 	i = 0;
 	if (ac < 2)
-		exit (1);
+		exit(1);
 	while (strs[i])
 	{
 		count = 0;

@@ -1,18 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: younajja <younajja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/27 11:38:25 by younajja          #+#    #+#             */
+/*   Updated: 2024/04/27 11:46:20 by younajja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-void    ft_print_lists(t_list **list)
+void	ft_print_lists(t_list **list)
 {
-    t_list *curr = *list;
-    while (curr != NULL)
-    {
-        ft_printf("%d\n", curr->value);
-        curr = curr->next;
-    }
+	t_list	*curr;
+
+	curr = *list;
+	while (curr != NULL)
+	{
+		ft_printf("%d\n", curr->value);
+		curr = curr->next;
+	}
 }
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
 	return (s1[i] - s2[i]);
@@ -46,6 +62,29 @@ void	ft_moves(t_list **stack_a, t_list **stack_b, char *s)
 		ft_exit_msg();
 }
 
+void	ft_checker(t_list **stack_a, t_list **stack_b)
+{
+	char	*str;
+
+	str = get_next_line(0);
+	while (str)
+	{
+		ft_moves(stack_a, stack_b, str);
+		free(str);
+		str = get_next_line(0);
+	}
+	if (check_is_sorted(stack_a) == 1 && !(*stack_b))
+	{
+		free_list(stack_a);
+		ft_printf("OK");
+	}
+	else
+	{
+		free_list(stack_a);
+		ft_printf("KO");
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
@@ -67,29 +106,5 @@ int	main(int ac, char **av)
 	while (i < len)
 		insert_ls_end(&stack_a, tab[i++]);
 	free(tab);
-    //ft_print_lists(&stack_a);
-
-	// **********************************************
-    char *str = get_next_line(0);
-    while (str)
-	{
-		ft_moves(&stack_a, &stack_b, str);
-		free(str);
-		str = get_next_line(0);
-	}
-	
-	
-	if (check_is_sorted(&stack_a) == 1 && !stack_b)
-	{
-		free_list(&stack_a);
-		ft_printf("OK");
-	}
-	else
-	{
-		free_list(&stack_a);
-		ft_printf("KO");
-	}
-
-	//ft_print_lists(&stack_a);
-
+	ft_checker(&stack_a, &stack_b);
 }
